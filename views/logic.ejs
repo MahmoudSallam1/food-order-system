@@ -1,0 +1,55 @@
+<script>
+    window.addEventListener('load', (event) => {
+        $("#meals").show();
+        $("#vegetables").hide();
+        $("#fruits").hide();
+        $("#seafood").hide();
+        $("#drinks").hide();
+    });
+
+
+    $('#category').on('change', function () {
+
+        if ($(this).val() === "meals") {
+            $("#meals").show();
+            $("#vegetables").hide();
+            $("#fruits").hide();
+            $("#seafood").hide();
+            $("#drinks").hide();
+        } else if ($(this).val() === "vegetables") {
+            $("#meals").hide();
+            $("#vegetables").show();
+            $("#fruits").hide();
+            $("#seafood").hide();
+            $("#drinks").hide();
+
+        } else if ($(this).val() === "fruits") {
+            $("#meals").hide();
+            $("#vegetables").hide();
+            $("#fruits").show();
+            $("#seafood").hide();
+            $("#drinks").hide();
+
+        } else if ($(this).val() === "fish") {
+            $("#meals").hide();
+            $("#vegetables").hide();
+            $("#fruits").hide();
+            $("#seafood").show();
+            $("#drinks").hide();
+
+        }
+        else if ($(this).val() === "drinks") {
+            $("#meals").hide();
+            $("#vegetables").hide();
+            $("#fruits").hide();
+            $("#seafood").hide();
+            $("#drinks").show();
+            console.log('Hello');
+
+        }
+         else {
+            console.log('Hello');
+
+        }
+    });
+</script>

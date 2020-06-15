@@ -1,0 +1,215 @@
+<section class="section-plans" id="order">
+    <div class="row">
+        <h2>Make Your Order!</h2>
+        
+    </div>
+    <div class="row">
+        <form action="/order" method="POST" class="contact-form">
+
+
+            <div class="row" >
+                <div class="col span-1-of-3">
+                    <label for="category">Category</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <select name="category" id="category">
+                        <option value="vegetables">Vegetables</option>
+                        <option value="fruits" >Fruits</option>
+                        <option value="meals" selected>Meat and Poultry</option>
+                        <option value="fish">Fish and Seafood</option>
+                        <option value="drinks">Drinks</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+                        <!-- meals -->
+                        <div class="row" id="meals">
+                            <div class="col span-1-of-3">
+                                <label for="meals">Meals</label>
+                            </div>
+                            <div class="col span-1-of-3">
+                                <select name="meals" id="">
+                                    <option value="Chicken Shawerma Sandwich">Chicken Shawerma Sandwich </option>
+                                    <option value="Chicken Shawerma Fatteh" selected>Chicken Shawerma Fatteh</option>
+                                    <option value="French Fries Platter">French Fries Platter</option>
+                                    <option value="Meat Shawerma Sandwich">Meat Shawerma Sandwich</option>
+                                    <option value="none">None</option>
+            
+                                </select>
+                         
+                        </div>
+                        <div class="col span-1-of-3">
+                            <input type="number" name="meal__quan" id="meal__quan" placeholder="Quantity" >
+                        </div>
+                        </div>
+
+
+            <!-- vegetables -->
+            <div class="row" id="vegetables">
+                <div class="col span-1-of-3">
+                    <label for="vegetables">Vegetables</label>
+                </div>
+                <div class="col span-1-of-3">
+                    <select name="vegetables" id="">
+                        <option value="Artichokes">Artichokes </option>
+                        <option value="Broccoli" selected>Broccoli</option>
+                        <option value="Carrots">Carrots</option>
+                        <option value="Garlic">Garlic</option>
+                        <option value="Leeks">Leeks</option>
+                        <option value="Potatoes">Potatoes</option>
+                        <option value="Tomatoes">Tomatoes</option>
+                        <option value="Yams">Yams</option>
+                        <option value="none">None</option>
+
+                    </select>
+                </div>
+                <div class="col span-1-of-3">
+                    <input type="number" name="veg__quan" id="veg__quan" placeholder="Quantity" >
+                </div>
+            </div>
+
+
+
+            <!-- fruits -->
+            <div class="row" id="fruits">
+                <div class="col span-1-of-3">
+                    <label for="fruits">Fruits</label>
+                </div>
+                <div class="col span-1-of-3">
+                    <select name="fruits" id="">
+                        <option value="Apple">Apple </option>
+                        <option value="Apricots" selected>Apricots</option>
+                        <option value="Avocado">Avocado</option>
+                        <option value="Banana">Banana</option>
+                        <option value="Blackberries">Blackberries</option>
+                        <option value="Cherries">Cherries</option>
+                        <option value="Figs">Figs</option>
+                        <option value="Grapefruit">Grapefruit</option>
+                        <option value="Blueberries">Blueberries</option>
+                        <option value="Mango">Mango</option>
+                        <option value="none">None</option>
+
+                    </select>
+                </div>
+                <div class="col span-1-of-3">
+                    <input type="number" name="fru__quan" id="fru__quan" placeholder="Quantity" >
+                </div>
+            </div>
+
+
+
+
+                        <!-- seafood -->
+                        <div class="row" id="seafood">
+                            <div class="col span-1-of-3">
+                                <label for="seafood">Seafood</label>
+                            </div>
+                            <div class="col span-1-of-3">
+                                <select name="seafood" id="">
+                                    <option value="Anchovies">Anchovies</option>
+                                    <option value="Blowfish" selected>Blowfish</option>
+                                    <option value="Flounder">Flounder</option>
+                                    <option value="Hake">Hake</option>
+                                    <option value="Lamprey">Lamprey</option>
+                                    <option value="Lingcod">Lingcod</option>
+                                    <option value="none">None</option>
+                                </select>
+                            </div>
+                            <div class="col span-1-of-3">
+                                <input type="number" name="sea__quan" id="sea__quan" placeholder="Quantity" >
+                            </div>
+                        </div>
+
+
+
+                     <!-- drinks -->
+                     <div class="row" id="drinks">
+                        <div class="col span-1-of-3">
+                            <label for="drinks">Drinks</label>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <select name="drinks" id="">
+                                <option value="Wine">Wine</option>
+                                <option value="Coffee" selected>Coffee</option>
+                                <option value="Lemonade">Lemonade</option>
+                                <option value="Iced tea">Iced tea</option>
+                                <option value="Hot chocolate">Hot chocolate</option>
+                                <option value="Juice">Juice</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                        <div class="col span-1-of-3">
+                            <input type="number" name="drink__quan" id="drink__quan" placeholder="Quantity" >
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="name">Customer Name</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="text" name="name" id="name" placeholder="Your name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="email" name="email" id="email" placeholder="Your email" required>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="phone">Phone Numebr</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="tel" name="phone" id="phone" placeholder="Your phone name" required>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="address">Address</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="text" name="address" id="address" placeholder="Your address" required>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="">Special Instructions</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="your message"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="">&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="submit" value="Place Your Order ">
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+

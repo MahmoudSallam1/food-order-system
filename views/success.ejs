@@ -1,0 +1,87 @@
+<%- include('header') %>
+
+
+<section id="success" style="text-align: center;">
+
+    <h2>Your Order has been successfully placed!</h2>
+    <div class="row js--wp-1">
+        <div class="col span-1-of-5 box">
+            <h3> <strong>Meals</strong> </h3>
+            <h4><%=order.meal__quan %> </h4>
+            <p> <%=order.meals %>  </p>
+ 
+        </div>
+        <div class="col span-1-of-5 box">
+            <h3> <strong>Vegetables</strong> </h3>
+            <h4><%=order.veg__quan %> </h4>
+            <p> <%=order.vegetables %>  </p>
+        </div>
+        <div class="col span-1-of-5 box ">
+            <h3>  <strong>Fruits</strong> </h3>
+            <h4><%=order.fru__quan %> </h4>
+            <p> <%=order.fruits %>  </p>
+     
+        </div>
+        <div class="col span-1-of-5 box">
+            <h3><strong>Seafood</strong></h3>
+            <h4><%=order.sea__quan %> </h4>
+            <p> <%=order.seafood %>  </p>
+        </div>
+        <div class="col span-1-of-5 box">
+            <h3><strong>Drinks</strong></h3>
+            <h4><%=order.drink__quan %> </h4>
+            <p> <%=order.drinks %>  </p>
+        </div>
+    </div>
+
+
+    <hr>
+    
+
+
+
+    <div class="row">
+   
+
+            <div class="col span-2-of-3 box" style="text-align: justify;">
+                <h1 class="order__info">Order Info</h1>
+                <p>Customer's Name : <strong><%=order.name %></strong> </p>
+                <p>Customer's email : <strong><%=order.email %></strong> </p>
+                <p>Customer's phone : <strong><%=order.phone %></strong> </p>
+                <p>Customer's address : <strong><%=order.address %></strong> </p>
+                <p>Specail Instructions : <strong><%=order.message %></strong> </p>
+     
+            </div>
+
+
+            <div class="col span-1-of-3 box" style="text-align: center;">
+
+                <h1 class="total__price">Total Price</h1>
+                <h2 class="amount">$<%=totalPrice%> </h2>
+
+     
+            </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <a style="text-align: center;" class="btn btn-full js--scroll-to-plans" href="/">Back </a>
+
+
+</section>
+
+
+
+
+<%- include('footer') %>

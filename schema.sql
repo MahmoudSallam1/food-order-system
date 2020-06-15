@@ -1,0 +1,112 @@
+DROP DATABASE resturant;
+CREATE DATABASE resturant;
+USE resturant;
+
+-- ===========================CUTOMERS==============================
+CREATE TABLE CUSTOMERS(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+first_name VARCHAR(100),
+last_name VARCHAR(100),
+email VARCHAR(100),
+address VARCHAR(100)
+);
+-- =========================ORDERS====================================
+CREATE TABLE ORDERS(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+order_date TIMESTAMP DEFAULT NOW(),
+price DECIMAL(8,2),
+delivery_address VARCHAR(100),
+customer_id INT NOT NULL,
+boy_id INT NOT NULL,
+FOREIGN KEY(customer_id) REFERENCES CUSTOMERS(id) ON DELETE CASCADE,
+FOREIGN KEY(boy_id) REFERENCES DELIVERY_BOYS(id) ON DELETE CASCADE
+);
+
+-- BRIDGE BETWEEN TWO TABLES OFFERS , MENU_ITEMS
+CREATE TABLE MENU_ORDER(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+quantity INT,
+item_price DECIMAL(12,2),
+price DECIMAL(12,2), -- qunatity*item_price
+order_id INT,
+menu_item_id INT,
+offer_id INT,
+FOREIGN KEY(order_id) REFERENCES ORDERS(id) ON DELETE CASCADE,
+FOREIGN KEY(menu_item_id) REFERENCES MENU_ITEMS(id) ON DELETE CASCADE,
+FOREIGN KEY(offer_id) REFERENCES OFFERS(id) ON DELETE CASCADE
+);
+
+CREATE TABLE MENU_ITEMS(  
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, 
+item_name VARCHAR(100),
+ingredients VARCHAR(100),
+price DECIMAL(12,2),
+active BOOL,
+category_id INT,
+FOREIGN KEY(category_id) REFERENCES CATEGORY(id) ON DELETE CASCADE
+);
+
+CREATE TABLE CATEGORY(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+category_name VARCHAR(100) -- drinks , meals,salads
+);
+
+-- =========================OFFFERS====================================
+CREATE TABLE OFFERS(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+data_active_from TIMESTAMP DEFAULT NOW(),
+data_active_to TIMESTAMP DEFAULT NOW(),
+offer_price  DECIMAL(12,2)
+);
+
+-- BRIDGE BETWEEN TWO TABLES OFFERS , MENU_ITEMS
+CREATE TABLE IN_OFFER(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+offer_id INT,
+menu_item_id INT,
+FOREIGN KEY(offer_id) REFERENCES OFFERS(id) ON DELETE CASCADE,
+FOREIGN KEY(menu_item_id) REFERENCES MENU_ITEMS(id) ON DELETE CASCADE
+);
+-- =================DELIVERY========================================
+CREATE TABLE DELIVERY_BOYS(
+id INT AUTO_INCREMENT PRIMARY KEY,
+first_name VARCHAR(100),
+last_name VARCHAR(100),
+phone_num INT NOT NULL,
+vehicle_num INT NOT NULL
+);
+
+CREATE TABLE AREA(
+id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+city VARCHAR(100),
+state VARCHAR(100)
+);
+-- BRIDGE BETWEEN TWO TABLES BOYS,AREA
+CREATE TABLE BOYS_AREA(
+boy_id INT NOT NULL,
+zip_id INT NOT NULL,
+FOREIGN KEY(boy_id) REFERENCES DELIVERY_BOYS(id) ON DELETE CASCADE,
+FOREIGN KEY(zip_id) REFERENCES AREA(id) ON DELETE CASCADE,
+PRIMARY KEY(boy_id,zip_id)
+);
+
+
+
+
+
+
+SELECT count(*)  FROM CUSTOMERS;
+SELECT  * FROM CUSTOMERS;
+delete  from customers;
+
+
+
+
+
+
+
+
+
+
+
+
